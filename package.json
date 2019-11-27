@@ -1,0 +1,23 @@
+{
+  "name": "week5-bcln-backend-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fac18/week5-bcln-backend-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fac18/week5-bcln-backend-api/issues"
+  },
+  "homepage": "https://github.com/fac18/week5-bcln-backend-api#readme",
+  "devDependencies": {
+    "eslint": "^6.7.1"
+  }
+}

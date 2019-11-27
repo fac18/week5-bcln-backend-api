@@ -1,10 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 const cities = require('./cities.js');
+const url = require('url');
 
 
-const handlerHome = (request, response) => {
-    console.log("handlerHome - Is running" );
+const handleHome = (request, response) => {
+    console.log("handleHome - Is running" );
     const filePath = path.join(__dirname, '..', 'public', 'index.html');
     fs.readFile(filePath, (error, file) => {
         if(error) {
@@ -19,7 +20,7 @@ const handlerHome = (request, response) => {
     })
 }
 
-const handlerPublic = (request, response) => {
+const handlePublic = (request, response) => {
     const endpoint = request.url;
     const extension = endpoint.split('.')[1];
     console.log("ext: ", extension);
@@ -43,21 +44,20 @@ const handlerPublic = (request, response) => {
     })
 }
 
-const handlerData = (request, response, endpoint) => {
+const handleData = (request, response, endpoint) => {
     let urlObject = url.parse(endpoint);
     let searchTerm = urlObject.query.split("=")[1];
     searchTerm = decodeURI(searchTerm);
     let result = cities.filter(city => city.toLowerCase().startWith(searchTerm))
     response.writeHead(200, { "Content-Type": "application/json" });
-    response.end(JSON.stringify(result)); 
+    response.end(JSON.stringify(result));
     }
 
 
 
-
-
-module.export = {
-    handlerHome, 
-    handlerPublic,
-    handlerData
+module.exports = {
+    handleHome,
+    handlePublic,
+    handleData
 }
+   

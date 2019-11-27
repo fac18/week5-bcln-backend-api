@@ -18,6 +18,6 @@ const optionSelect = () => {
 
 const chooseOption = event => {
   let optionText = event.currentTarget.textContent;
-  siteBox.value = optionText;
+  cityBox.value = optionText;
   optionSelect();
 };

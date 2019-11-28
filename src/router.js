@@ -7,7 +7,11 @@ const router = (request, response) => {
         handlers.handleHome(request, response);
     } 
     else if (endpoint.indexOf('public') !== -1) {
-        handlers.handlerPublic(request, response);
+        handlers.handlePublic(request, response);
+    }
+    else {
+        response.writeHead(404);
+        response.end('404 not found');
     }
     // else if (endpoint.includes('/search')) {
     //     handlers.handlerData(request, response, endpoint);

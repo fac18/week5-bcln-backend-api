@@ -7,6 +7,10 @@
     <meta name="description" content="Weather app" />
     <link rel="stylesheet" href="public/style.css" />
     <title>Weather app</title>
+    <script
+      src="https://kit.fontawesome.com/9de7c8a110.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <section>
@@ -43,8 +47,9 @@
       </div>
     </section>
     <section class="city-dropdown">
-      <label for="city" class="city-label">Or select a city here:</label>
+      <label for="city" class="city-label">Or:</label>
       <select required id="city" class="dropdown">
+        <option value="" disabled selected hidden> Select your city</option>
         <option value="bath">Bath</option>
         <option value="birmingham">Birmingham</option>
         <option value="bradford">Bradford</option>
@@ -112,6 +117,9 @@
         <option value="lisburn">Lisburn</option>
         <option value="newry">Newry</option>
       </select>
+      <button id="search-button" type="submit" aria-label="Search button">
+        <i class="fas fa-search"></i>
+      </button>
     </section>
 
     <script src="public/js/script.js"></script>

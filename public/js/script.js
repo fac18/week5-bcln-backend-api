@@ -1,4 +1,4 @@
-const cityBox = document.querySelector('input[name="cityBox"]');
+const cityBox = document.querySelector('input[name="city-box"]');
 const searchButton = document.querySelector("#search-button");
 
 // if city is typed in and search button is selected, make weather API request

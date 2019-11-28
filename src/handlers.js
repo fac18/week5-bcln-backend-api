@@ -34,10 +34,14 @@ const handlePublic = (request, response) => {
   const filePath = path.join(__dirname, "..", endpoint);
   fs.readFile(filePath, (error, file) => {
     if (error) {
-      response.writeHead(500, { "Content-Type": "text/html" });
+      response.writeHead(500, {
+        "Content-Type": "text/html"
+      });
       response.end("<h1>Sorry, there is an error on our side :(");
     } else {
-      response.writeHead(200, { "Content-Type": extensionType[extension] });
+      response.writeHead(200, {
+        "Content-Type": extensionType[extension]
+      });
       response.end(file);
     }
   });
@@ -46,10 +50,25 @@ const handlePublic = (request, response) => {
 const handleData = (request, response, endpoint) => {
   let urlObject = url.parse(endpoint);
   let searchTerm = urlObject.query.split("=")[1];
-  searchTerm = decodeURI(searchTerm);
-  let result = cities.filter(city => city.toLowerCase().startWith(searchTerm));
-  response.writeHead(200, { "Content-Type": "application/json" });
+  console.log(endpoint);
+  let result = search(decodeURI(searchTerm));
+  response.writeHead(200, {
+    "Content-Type": "application/json"
+  });
   response.end(JSON.stringify(result));
+};
+
+const search = term => {
+  if (term === "") {
+    return [];
+  }
+  return cities.filter(city => {
+    let cityLowerCase = city.toLowerCase();
+    let termLowerCase = decodeURI(term.toLowerCase());
+    return (
+      cityLowerCase.startsWith(termLowerCase) && cityLowerCase !== termLowerCase
+    );
+  });
 };
 
 module.exports = {

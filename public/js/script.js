@@ -1,8 +1,5 @@
-const cityBox = document.querySelector('input[name="city-box"]');
+const cityBox = document.getElementById('london');
 
-cityBox.addEventListener("click", getWeather);
-
-// function to use search query to search cities.js
 const getWeather = () => {
   let xhr = new XMLHttpRequest();
   let searchTerm = cityBox.value;
@@ -17,3 +14,7 @@ const getWeather = () => {
   xhr.open("GET", searchUrl, true);
   xhr.send();
 };
+
+cityBox.addEventListener("click", getWeather);
+
+// function to use search query to search cities.js

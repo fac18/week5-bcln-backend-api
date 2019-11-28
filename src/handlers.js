@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
-const cities = require('./cities.js');
 const url = require('url');
+const env = require('env2')(__dirname+'/config.env')
+const request = require('./request.js')
 
 
 const handleHome = (request, response) => {
@@ -53,31 +54,24 @@ const handlePublic = (request, response) => {
 }
 
 const handleData = (request, response, endpoint) => {
-  let urlObject = url.parse(endpoint);
-  let searchTerm = urlObject.query.split("=")[1];
-  console.log(endpoint);
-  let result = search(decodeURI(searchTerm));
-  response.writeHead(200, {
-    "Content-Type": "application/json"
-  });
-  response.end(JSON.stringify(result));
+  const weatherKey = process.env.DB_APIKEYWEATHER
+  const countryCode = endpoint.split("?")[1];
+  let url = `http://api.openweathermap.org/data/2.5/weather?q=${countryCode},uk&APPID=${weatherKey}`
+
+  myRequest(url, (err, data) => {
+    if (err) {
+      console.log(err)
+      response.writeHead(400, {'Content-Type': 'text/html'});
+      response.write("no data");
+      response.end();
+    }
+    else {
+      response.writeHead(200, {'Content-Type': application/json})
+      response.write(JSON.stringify(data.body));
+      response.end()
+    }
+  })
 }
-
-const search = term => {
-  if (term === "") {
-    return [];
-  }
-  return cities.filter(city => {
-    let cityLowerCase = city.toLowerCase();
-    let termLowerCase = decodeURI(term.toLowerCase());
-    return (
-      cityLowerCase.startsWith(termLowerCase) &&
-      cityLowerCase !== termLowerCase
-    );
-  });
-}
-
-
 
 module.exports = {
   handleHome,

@@ -1,23 +1,19 @@
 const cityBox = document.querySelector('input[name="city-box"]');
-const searchButton = document.querySelector("#search-button");
 
-// if city is typed in and search button is selected, make weather API request
-searchButton.addEventListener("click", () => {
-  event.preventDefault();
-  if (cityBox.value) {
-    // weather API call goes here
-  }
-});
+cityBox.addEventListener("click", getWeather);
 
-// if city is selected from dropdown menu, make weather API request
-const optionSelect = () => {
-  if (cityBox.value) {
-    // weather API call goes here
-  }
-};
+// function to use search query to search cities.js
+const getWeather = () => {
+  let xhr = new XMLHttpRequest();
+  let searchTerm = cityBox.value;
+  let searchUrl = `/search?q=${searchTerm}`;
 
-const chooseOption = event => {
-  let optionText = event.currentTarget.textContent;
-  cityBox.value = optionText;
-  optionSelect();
+  xhr.onreadystatechange = () => {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      cityWeather = JSON.parse(xhr.responseText);
+      console.log(cityWeather);
+    }
+  };
+  xhr.open("GET", searchUrl, true);
+  xhr.send();
 };

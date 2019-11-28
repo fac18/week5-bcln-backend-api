@@ -8,13 +8,7 @@
 body {
   background-color: var(--light-pink);
   font-family: 'Overpass Mono', monospace;
-  /* font-size: 2rem; */
-  /* font: var(--rich-black) */
-  /* line-height: 1rem; */
-}
 
-.headline {
-  font-size: 4rem;
 }
 
 .container {
@@ -22,34 +16,40 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  font-size: 1.5rem;
-  margin: 5rem;
-  padding: 1rem;
+  margin: 8rem;
+  padding: 3rem;
   border-style: double;
+  font-size: 4rem;
   line-height: 2rem;
 }
-
 
 .city-dropdown {
   display: flex;
   justify-content: center;
   flex-direction: row;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  padding: 1rem;
+  /* box-shadow: 4px 4px 0px var(--dark-pink); */
 }
 
-.city-dropdown:hover{
+#city {
+  font-family: 'Overpass Mono', monospace;
+  padding: 1rem;
+  font-size: 2rem;
+  
+}
+#city:hover{
+cursor: pointer;
+background-color: var(--dark-pink);
+}
+
+.search-button {
+  padding: .7rem;
+  border-radius: 10%;
+  font-size: 1rem;
+}
+.search-button:hover {
   cursor: pointer;
-  transform: scale(1.1);
-}
-
-.city-label {
-  font-size: 1.5rem;
-padding: 1rem 1rem;
-
-}
-
-#search-button {
-  margin: 1rem;
-
+  background-color: var(--dark-pink);
 }

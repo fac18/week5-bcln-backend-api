@@ -1,9 +1,12 @@
-const cityBox = document.querySelector("#city");
-const searchButton = document.querySelector("#search-button")
+const searchButton = document.querySelector(".search-button")
+
 
 const getWeather = () => {
-  let xhr = new XMLHttpRequest();
+  const cityBox = document.querySelector(".dropdown");
   let searchTerm = cityBox.value;
+  let xhr = new XMLHttpRequest();
+  
+  console.log(searchTerm);
   let searchUrl = `/search?q=${searchTerm}`;
 
   xhr.onreadystatechange = () => {
@@ -16,6 +19,6 @@ const getWeather = () => {
   xhr.send();
 };
 
-searchButton.addEventListener("click", getWeather())
+searchButton.addEventListener("click", getWeather)
 
 // function to use search query to search cities.js

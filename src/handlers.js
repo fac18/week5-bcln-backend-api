@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const url = require('url');
 const env = require('env2')(__dirname+'/config.env')
-const request = require('./request.js')
+const myRequest = require('./request.js')
 
 
 const handleHome = (request, response) => {
@@ -14,7 +14,6 @@ const handleHome = (request, response) => {
       response.writeHead(500, { "Content-Type": "text/html" });
       response.end("<h1>Sorry, there is an error on our side :(");
     } else {
-      console.log(path);
       response.writeHead(200, { "Content-Type": "text/html" });
       response.end(file);
     }
@@ -54,10 +53,13 @@ const handlePublic = (request, response) => {
 
 const handleData = (request, response, endpoint) => {
   const weatherKey = process.env.DB_APIKEYWEATHER
+  console.log(endpoint);
+  // const cityCodeSpaceFix = endpoint.split("%20").join
   const cityCode = endpoint.split("=")[1];
-  let url = `http://api.openweathermap.org/data/2.5/weather?q=${cityCode},uk&APPID=${weatherKey}`
-
-  
+  let url = `http://api.openweathermap.org/data/2.5/weather?q=${cityCode},uk&units=metric&APPID=${weatherKey}`
+  console.log(url);
+  // request.myRequest(url)
+  // console.log(url)
   myRequest(url, (err, data) => {
     if (err) {
       console.log(err)
@@ -66,8 +68,9 @@ const handleData = (request, response, endpoint) => {
       response.end();
     }
     else {
-      response.writeHead(200, {'Content-Type': application/json})
-      response.write(JSON.stringify(data.body));
+      response.writeHead(200, {'Content-Type': 'application/json'})
+      console.log("this is data", data.weather);
+      response.write(JSON.stringify(data.weather));
       response.end()
     }
   })

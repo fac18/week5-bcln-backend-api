@@ -1,4 +1,7 @@
 const searchButton = document.querySelector(".search-button")
+// let weatherCondition = document.querySelector(".weather-area").textContent
+// let weatherTemperature = document.querySelector(".weather-area").textContent
+
 
 
 const getWeather = () => {
@@ -13,6 +16,9 @@ const getWeather = () => {
     if (xhr.readyState === 4 && xhr.status === 200) {
       let cityWeather = JSON.parse(xhr.responseText);
       console.log(cityWeather);
+      console.log(cityWeather.weatherDesc)
+      weatherCondition = cityWeather.weatherDesc
+      weatherTemperature = cityWeather.weatherTemp
     }
   };
   xhr.open("GET", searchUrl, true);

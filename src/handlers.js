@@ -69,8 +69,12 @@ const handleData = (request, response, endpoint) => {
     }
     else {
       response.writeHead(200, {'Content-Type': 'application/json'})
-      console.log("this is data", data.weather);
-      response.write(JSON.stringify(data.weather));
+      let weatherInfo = {
+        weatherDesc: data.weather[0].description,
+        weatherTemp: data.main.temp
+      }
+      console.log(weatherInfo);
+      response.write(JSON.stringify(weatherInfo));
       response.end()
     }
   })

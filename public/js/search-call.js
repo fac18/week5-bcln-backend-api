@@ -9,6 +9,7 @@ const searchCities = () => {
   xhr.onreadystatechange = () => {
     if (xhr.readyState === 4 && xhr.status === 200) {
       cityArray = JSON.parse(xhr.responseText);
+      console.log(cityArray);
       populateDropDown();
     }
   };

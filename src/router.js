@@ -5,18 +5,18 @@ const router = (request, response) => {
     console.log(endpoint);
     if(endpoint === '/') {
         handlers.handleHome(request, response);
-    } 
-    else if (endpoint.indexOf('public') !== -1) {
-        handlers.handlePublic(request, response);
     }
+    else if (endpoint.includes('public')) {
+        handlers.handlePublic(request, response);
+      }
+      else if (endpoint.includes('search')) {
+          handlers.handleData(request, response, endpoint);
+      }
     else {
         response.writeHead(404);
         response.end('404 not found');
-    }
-    // else if (endpoint.includes('/search')) {
-    //     handlers.handlerData(request, response, endpoint);
-    // }
-} 
+}
+}
 
 
 

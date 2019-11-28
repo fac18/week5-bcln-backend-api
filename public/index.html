@@ -8,19 +8,18 @@
     <link rel="stylesheet" href="./style.css" />
     <title>Weather app</title>
     <link href="https://fonts.googleapis.com/css?family=Overpass+Mono&display=swap" rel="stylesheet">
-    <!-- <script
+    <script
       src="https://kit.fontawesome.com/9de7c8a110.js"
       crossorigin="anonymous"
-    ></script> -->
+    ></script>
   </head>
   <body>
+    <section class="container">
     <h1 class="headline">Weather</h1>
-    <section class="city-dropdown">
-      <label for="city" class="city-label">Or:</label>
+    <article class="city-dropdown">
+      <h1>Select your city: </h1>
       <select required id="city" class="dropdown">
-        <option id="myOption" value="" disabled selected hidden>
-          Select your city
-        </option>
+        <option value="london">London</option>
         <option value="bath">Bath</option>
         <option value="birmingham">Birmingham</option>
         <option value="bradford">Bradford</option>
@@ -45,7 +44,6 @@
         <option value="lichfield">Lichfield</option>
         <option value="lincoln">Lincoln</option>
         <option value="liverpool">Liverpool</option>
-        <option value="london">London</option>
         <option value="manchester">Manchester</option>
         <option value="newcastle upon tyne">Newcastle upon Tyne</option>
         <option value="norwich">Norwich</option>
@@ -91,7 +89,9 @@
       <button class="search-button" type="submit" aria-label="Search button">
         <i class="fas fa-search"></i>
       </button>
-    </section>
+    </article>
+    <article id="results"></article>
     <script src="public/js/script.js"></script>
+  </section>
   </body>
 </html>

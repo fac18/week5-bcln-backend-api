@@ -51,9 +51,10 @@ const handlePublic = (request, response) => {
 
 const handleData = (request, response, endpoint) => {
   const weatherKey = process.env.DB_APIKEYWEATHER
-  const countryCode = endpoint.split("?")[1];
-  let url = `http://api.openweathermap.org/data/2.5/weather?q=${countryCode},uk&APPID=${weatherKey}`
+  const cityCode = endpoint.split("=")[1];
+  let url = `http://api.openweathermap.org/data/2.5/weather?q=${cityCode},uk&APPID=${weatherKey}`
 
+  
   myRequest(url, (err, data) => {
     if (err) {
       console.log(err)

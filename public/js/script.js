@@ -1,4 +1,5 @@
-const cityBox = document.getElementById('london');
+const cityBox = document.querySelector("#city");
+const searchButton = document.querySelector("#search-button")
 
 const getWeather = () => {
   let xhr = new XMLHttpRequest();
@@ -7,7 +8,7 @@ const getWeather = () => {
 
   xhr.onreadystatechange = () => {
     if (xhr.readyState === 4 && xhr.status === 200) {
-      cityWeather = JSON.parse(xhr.responseText);
+      let cityWeather = JSON.parse(xhr.responseText);
       console.log(cityWeather);
     }
   };
@@ -15,6 +16,6 @@ const getWeather = () => {
   xhr.send();
 };
 
-cityBox.addEventListener("click", getWeather);
+searchButton.addEventListener("click", getWeather())
 
 // function to use search query to search cities.js

@@ -39,7 +39,10 @@ const handlePublic = (request, response) => {
       response.writeHead(500, {
         "Content-Type": "text/html"
       });
-      response.end("<h1>Sorry, there is an error on our side :(");
+      response.end("<h1>Sorry, there is an error on our side :(<h1>");
+    } else if (error) {
+      response.writeHead(404, { "Content-Type": "text-html" });
+      response.end("<h1>Sorry, page has not been found</h1>");
     } else {
       response.writeHead(200, {
         "Content-Type": extensionType[extension]

@@ -23,7 +23,7 @@ const cityList = [
     'Lichfield',
     'Lincoln',
     'Liverpool',
-    'City of London',
+    'London',
     'Manchester',
     'Newcastle upon Tyne',
     'Norwich',
@@ -66,3 +66,5 @@ const cityList = [
     'Lisburn',
     'Newry'
     ]
+
+    module.exports = cityList;

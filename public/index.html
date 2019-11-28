@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="description" content="Weather app" />
-    <link rel="stylesheet" href="public/style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Weather app</title>
     <link href="https://fonts.googleapis.com/css?family=Overpass+Mono&display=swap" rel="stylesheet">
     <!-- <script
@@ -14,47 +14,17 @@
     ></script> -->
   </head>
   <body>
-    <section class="container">
-      <p class=headline>MAJOR WEATHER</p>
-      <p>click on a city to find out the current weather</p>
-      <div class="city-button-box">
-        <button name="city-box" class="city-select" value="london" id="london">
-          London
-        </button>
-        <button
-          name="city-box"
-          class="city-select"
-          value="edinburgh"
-          id="edinburgh"
-        >
-          Edinburgh
-        </button>
-        <button
-          name="city-box"
-          class="city-select"
-          value="cardiff"
-          id="cardiff"
-        >
-          Cardiff
-        </button>
-        <button
-          name="city-box"
-          class="city-select"
-          value="belfast"
-          id="belfast"
-        >
-          Belfast
-        </button>
-      </div>
-    </section>
+    <h1 class="headline">Weather</h1>
     <section class="city-dropdown">
       <label for="city" class="city-label">Or:</label>
       <select required id="city" class="dropdown">
-        <option value="" disabled selected hidden> Select your city</option>
+        <option id="myOption" value="" disabled selected hidden>
+          Select your city
+        </option>
         <option value="bath">Bath</option>
         <option value="birmingham">Birmingham</option>
         <option value="bradford">Bradford</option>
-        <option value="brighton and hove">Brighton and Hove</option>
+        <option value="brighton">Brighton and Hove</option>
         <option value="bristol">Bristol</option>
         <option value="cambridge">Cambridge</option>
         <option value="canterbury">Canterbury</option>
@@ -68,7 +38,7 @@
         <option value="exeter">Exeter</option>
         <option value="gloucester">Gloucester</option>
         <option value="hereford">Hereford</option>
-        <option value="kingston upon hull">Kingston upon Hull</option>
+        <option value="city of kingston upon hull">Kingston upon Hull</option>
         <option value="lancaster">Lancaster</option>
         <option value="leeds">Leeds</option>
         <option value="leicester">Leicester</option>
@@ -90,7 +60,7 @@
         <option value="salisbury">Salisbury</option>
         <option value="sheffield">Sheffield</option>
         <option value="southampton">Southampton</option>
-        <option value="st albans">St Albans</option>
+        <option value="saint albans">St Albans</option>
         <option value="stoke-on-trent">Stoke-on-Trent</option>
         <option value="sunderland">Sunderland</option>
         <option value="truro">Truro</option>
@@ -104,7 +74,7 @@
         <option value="bangor">Bangor</option>
         <option value="cardiff">Cardiff</option>
         <option value="newport">Newport</option>
-        <option value="st davids">St Davids</option>
+        <option value="saint davids">St Davids</option>
         <option value="swansea">Swansea</option>
         <option value="aberdeen">Aberdeen</option>
         <option value="dundee">Dundee</option>
@@ -122,7 +92,6 @@
         <i class="fas fa-search"></i>
       </button>
     </section>
-
     <script src="public/js/script.js"></script>
   </body>
 </html>

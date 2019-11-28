@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "tape test/test.js | tap-spec",
-    "coverage": "nyc tape test/test.js | tap-spec",
+    "test": "tape test/*.js | tap-spec",
+    "coverage": "nyc tape test/*.js | tap-spec",
     "start": "nodemon src/server.js"
   },
   "repository": {

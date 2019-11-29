@@ -14,12 +14,23 @@ body {
 }
 
 header {
-  font-size: 3rem;
+  font-size: 2.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-text-align: center;
-flex-grow: 1;
+  text-align: center;
+  flex-grow: 1;
+}
+
+footer {
+  font-size: 1rem;
+  display: flex;
+  /* justify-content: center;
+  align-items: center;
+  text-align: center; */
+  bottom: 0;
+  position: absolute;
+  margin: .5rem;
 }
 
 .container {
@@ -32,11 +43,9 @@ flex-grow: 1;
   line-height: 2rem;
   flex-grow: 1;
 }
-
 .label-design {
   display: flex;
 }
-
 .city-dropdown {
   display: flex;
   justify-content: center;
@@ -55,7 +64,7 @@ flex-grow: 1;
 
 }
 #city:hover{
-cursor: pointer;
+  cursor: pointer;
 }
 
 .search-button {
@@ -68,4 +77,51 @@ cursor: pointer;
 .search-button:hover {
   cursor: pointer;
   transform: scale(1.1);
+}
+
+@media (min-width: 768px)  {
+
+header {
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  flex-grow: 1;
+}
+.label-design {
+  display: flex;
+  padding: 1rem;
+}
+.city-dropdown {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  font-size: 2rem;
+  padding: 1rem;
+}
+#city {
+  font-family: 'Overpass Mono', monospace;
+  padding: .2rem;
+  font-size: 1.6rem;
+  border-radius: 5%;
+  flex-direction: row;
+  background-color: var(--silver);
+
+.search-button {
+  padding: .2rem;
+  border-radius: 15%;
+  font-size: 1.5rem;
+  margin: 1.5rem;
 }

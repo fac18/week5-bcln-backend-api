@@ -63,21 +63,21 @@ test("Verifying if myRequest correcly fetches data", t => {
   });
 });
 
-test("Verifying if myRequest correcly fetches data", t => {
-  supertest(router).get("http://api.openweathermap.org");
-  console.log("WORK");
-  myRequest(
-    `http://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&APPID=${weatherKey}`,
-    (err, res) => {
-      t.error(err);
-      console.log("This is err WORK", err);
-      t.equal(
-        res.statusCode,
-        200,
-        "The API should have the status code of 200"
-      );
-      console.log("res.statusCode", res.statusCode);
-      t.end();
-    }
-  );
-});
+// test("Verifying if myRequest correcly fetches data", t => {
+//   supertest(router).get("http://api.openweathermap.org");
+//   console.log("WORK");
+//   myRequest(
+//     `http://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&APPID=${weatherKey}`,
+//     (err, res) => {
+//       t.error(err);
+//       console.log("This is err WORK", err);
+//       t.equal(
+//         res.statusCode,
+//         200,
+//         "The API should have the status code of 200"
+//       );
+//       console.log("res.statusCode", res.statusCode);
+//       t.end();
+//     }
+//   );
+// });

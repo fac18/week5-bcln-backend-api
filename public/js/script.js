@@ -42,8 +42,9 @@ const getWeather = event => {
       let cityWeather = JSON.parse(xhr.responseText);
       console.log(cityWeather);
       console.log(cityWeather.weatherDesc);
-      weatherCondition = cityWeather.weatherDesc;
-      weatherTemperature = cityWeather.weatherTemp;
+      weatherCondition = "Expect " + cityWeather.weatherDesc;
+      weatherTemperature =
+        "Temp is " + Math.round(cityWeather.weatherTemp) + "°C";
       addDom();
     }
   };

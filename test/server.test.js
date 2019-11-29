@@ -47,19 +47,21 @@ test("css file is working with status code 200", t => {
     });
 });
 
-// test("Verifying if myRequest correcly fetches data", t => {
-//   nock("https://jsonplaceholder.typicode.com")
-//     .get("/todos/1")
-//     .reply(200, { title: "delectus aut autem" });
-//   console.log("hello");
-//   myRequest("https://jsonplaceholder.typicode.com/todos/1", (err, res) => {
-//     t.error(err);
-//     console.log("This is err", err);
-//     t.equal(res.statusCode, 200, "The API should have the status code of 200");
-//     console.log("res.statusCode", res.statusCode);
-//     t.end();
-//   });
-// });
+//Nock is an HTTP server mocking and expectations library for Node.js.
+
+test("Verifying if myRequest correcly fetches data", t => {
+  nock("https://jsonplaceholder.typicode.com")
+    .get("/todos/1")
+    .reply(200, { title: "delectus aut autem" });
+  console.log("hello");
+  myRequest("https://jsonplaceholder.typicode.com/todos/1", (err, res) => {
+    t.error(err);
+    console.log("This is err", err);
+    t.equal(res.statusCode, 200, "The API should have the status code of 200");
+    console.log("res.statusCode", res.statusCode);
+    t.end();
+  });
+});
 
 // test("Verifying if myRequest correcly fetches data", t => {
 //   supertest(router).get("http://api.openweathermap.org");

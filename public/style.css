@@ -11,8 +11,6 @@ body {
   font-family: 'Overpass Mono', monospace;
   display: flex;
   flex-direction: column;
-  /* box-sizing: border-box;
-  position: relative; */
 }
 
 header {
@@ -29,27 +27,22 @@ flex-grow: 1;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  /* margin: auto; */
   padding: 3rem;
-  /* border-style: double; */
   font-size: 1rem;
   line-height: 2rem;
   flex-grow: 1;
-
 }
 
 .label-design {
   display: flex;
-
 }
+
 .city-dropdown {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   font-size: 1rem;
-  /* padding: 0.5rem; */
-  /* box-shadow: 4px 4px 0px var(--dark-pink); */
 }
 
 #city {
@@ -57,12 +50,12 @@ flex-grow: 1;
   padding: .2rem;
   font-size: 1rem;
   border-radius: 5%;
+  flex-direction: row;
   background-color: var(--silver);
 
 }
 #city:hover{
 cursor: pointer;
-background-color: var(--dark-pink);
 }
 
 .search-button {
@@ -70,8 +63,9 @@ background-color: var(--dark-pink);
   border-radius: 15%;
   font-size: 1rem;
   margin: 0.5rem;
+
 }
 .search-button:hover {
   cursor: pointer;
-  background-color: var(--dark-pink);
+  transform: scale(1.1);
 }

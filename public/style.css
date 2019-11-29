@@ -25,9 +25,6 @@ header {
 footer {
   font-size: 1rem;
   display: flex;
-  /* justify-content: center;
-  align-items: center;
-  text-align: center; */
   bottom: 0;
   position: absolute;
   margin: .5rem;
@@ -79,6 +76,7 @@ footer {
   transform: scale(1.1);
 }
 
+
 @media (min-width: 768px)  {
 
 header {
@@ -89,6 +87,7 @@ header {
   text-align: center;
   flex-grow: 1;
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -99,10 +98,12 @@ header {
   line-height: 2rem;
   flex-grow: 1;
 }
+
 .label-design {
   display: flex;
   padding: 1rem;
 }
+
 .city-dropdown {
   display: flex;
   justify-content: center;
@@ -118,10 +119,12 @@ header {
   border-radius: 5%;
   flex-direction: row;
   background-color: var(--silver);
+}
 
 .search-button {
   padding: .2rem;
   border-radius: 15%;
   font-size: 1.5rem;
   margin: 1.5rem;
+}
 }

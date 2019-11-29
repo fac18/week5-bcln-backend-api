@@ -2,13 +2,35 @@
   /* colour variables */
   --dark-pink: #C56A73;
   --light-pink: #F9CFCF;
+  --silver: #C8C8C8;
   --rich-black: #050303;
 }
 
 body {
   background-color: var(--light-pink);
   font-family: 'Overpass Mono', monospace;
+  display: flex;
+  flex-direction: column;
+}
 
+header {
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+}
+
+footer {
+  font-size: 1rem;
+  display: flex;
+  /* justify-content: center;
+  align-items: center;
+  text-align: center; */
+  bottom: 0;
+  position: absolute;
+  margin: .5rem;
 }
 
 .container {
@@ -16,13 +38,71 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 8rem;
   padding: 3rem;
-  border-style: double;
-  font-size: 4rem;
+  font-size: 1rem;
   line-height: 2rem;
+  flex-grow: 1;
+}
+.label-design {
+  display: flex;
+}
+.city-dropdown {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
 }
 
+#city {
+  font-family: 'Overpass Mono', monospace;
+  padding: .2rem;
+  font-size: 1rem;
+  border-radius: 5%;
+  flex-direction: row;
+  background-color: var(--silver);
+
+}
+#city:hover{
+  cursor: pointer;
+}
+
+.search-button {
+  padding: .2rem;
+  border-radius: 15%;
+  font-size: 1rem;
+  margin: 0.5rem;
+
+}
+.search-button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+@media (min-width: 768px)  {
+
+header {
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  flex-grow: 1;
+}
+.label-design {
+  display: flex;
+  padding: 1rem;
+}
 .city-dropdown {
   display: flex;
   justify-content: center;
@@ -30,26 +110,18 @@ body {
   align-items: center;
   font-size: 2rem;
   padding: 1rem;
-  /* box-shadow: 4px 4px 0px var(--dark-pink); */
 }
-
 #city {
   font-family: 'Overpass Mono', monospace;
-  padding: 1rem;
-  font-size: 2rem;
-  
-}
-#city:hover{
-cursor: pointer;
-background-color: var(--dark-pink);
-}
+  padding: .2rem;
+  font-size: 1.6rem;
+  border-radius: 5%;
+  flex-direction: row;
+  background-color: var(--silver);
 
 .search-button {
-  padding: .7rem;
-  border-radius: 10%;
-  font-size: 1rem;
-}
-.search-button:hover {
-  cursor: pointer;
-  background-color: var(--dark-pink);
+  padding: .2rem;
+  border-radius: 15%;
+  font-size: 1.5rem;
+  margin: 1.5rem;
 }

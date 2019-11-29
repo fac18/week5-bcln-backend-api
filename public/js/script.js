@@ -1,14 +1,24 @@
-const searchButton = document.querySelector(".search-button")
+const searchButton = document.querySelector(".search-button");
+const currentDate = document.querySelector(".date");
+
+var dt = new Date();
+// ensure date comes as 01, 09 etc
+var DD = ("0" + dt.getDate()).slice(-2);
+// getMonth returns month from 0
+var MM = ("0" + (dt.getMonth() + 1)).slice(-2);
+var YYYY = dt.getFullYear();
+var hh = ("0" + dt.getHours()).slice(-2);
+var mm = ("0" + dt.getMinutes()).slice(-2);
+var date_string = YYYY + "-" + MM + "-" + DD + " " + hh + ":" + mm;
+currentDate.textContent = date_string;
 
 let addDom = () => {
-
-
   let results = document.querySelector(".results");
   let weatherDescription = document.createElement("p");
   let weatherTemp = document.createElement("p");
 
   while (results.firstChild) {
-      results.removeChild(results.firstChild);
+    results.removeChild(results.firstChild);
   }
 
   weatherDescription.textContent = weatherCondition;
@@ -16,9 +26,9 @@ let addDom = () => {
 
   results.appendChild(weatherDescription);
   results.appendChild(weatherTemp);
-}
+};
 
-const getWeather = (event) => {
+const getWeather = event => {
   event.preventDefault();
   const cityBox = document.querySelector(".dropdown");
   let searchTerm = cityBox.value;
@@ -31,9 +41,9 @@ const getWeather = (event) => {
     if (xhr.readyState === 4 && xhr.status === 200) {
       let cityWeather = JSON.parse(xhr.responseText);
       console.log(cityWeather);
-      console.log(cityWeather.weatherDesc)
-      weatherCondition = cityWeather.weatherDesc
-      weatherTemperature = cityWeather.weatherTemp
+      console.log(cityWeather.weatherDesc);
+      weatherCondition = cityWeather.weatherDesc;
+      weatherTemperature = cityWeather.weatherTemp;
       addDom();
     }
   };
@@ -41,4 +51,4 @@ const getWeather = (event) => {
   xhr.send();
 };
 
-searchButton.addEventListener("click", getWeather)
+searchButton.addEventListener("click", getWeather);

@@ -7,7 +7,10 @@
     <meta name="description" content="Weather app" />
     <link rel="stylesheet" href="public/style.css" />
     <title>Weather app</title>
-    <link href="https://fonts.googleapis.com/css?family=Overpass+Mono&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Overpass+Mono&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/9de7c8a110.js"
       crossorigin="anonymous"
@@ -15,85 +18,84 @@
   </head>
   <body>
     <section class="container">
-    <h1 class="headline">Weather</h1>
-    <article class="city-dropdown">
-      <h1>Select your city: </h1>
-      <label for = "city">Cities in the UK</Label>
-      <select required id="city" class="dropdown">
-        <option value="london">London</option>
-        <option value="bath">Bath</option>
-        <option value="birmingham">Birmingham</option>
-        <option value="bradford">Bradford</option>
-        <option value="brighton">Brighton and Hove</option>
-        <option value="bristol">Bristol</option>
-        <option value="cambridge">Cambridge</option>
-        <option value="canterbury">Canterbury</option>
-        <option value="carlisle">Carlisle</option>
-        <option value="chester">Chester</option>
-        <option value="chichester">Chichester</option>
-        <option value="coventry">Coventry</option>
-        <option value="derby">Derby</option>
-        <option value="durham">Durham</option>
-        <option value="ely">Ely</option>
-        <option value="exeter">Exeter</option>
-        <option value="gloucester">Gloucester</option>
-        <option value="hereford">Hereford</option>
-        <option value="city of kingston upon hull">Kingston upon Hull</option>
-        <option value="lancaster">Lancaster</option>
-        <option value="leeds">Leeds</option>
-        <option value="leicester">Leicester</option>
-        <option value="lichfield">Lichfield</option>
-        <option value="lincoln">Lincoln</option>
-        <option value="liverpool">Liverpool</option>
-        <option value="manchester">Manchester</option>
-        <option value="newcastle upon tyne">Newcastle upon Tyne</option>
-        <option value="norwich">Norwich</option>
-        <option value="nottingham">Nottingham</option>
-        <option value="oxford">Oxford</option>
-        <option value="peterborough">Peterborough</option>
-        <option value="plymouth">Plymouth</option>
-        <option value="portsmouth">Portsmouth</option>
-        <option value="preston">Preston</option>
-        <option value="ripon">Ripon</option>
-        <option value="salford">Salford</option>
-        <option value="salisbury">Salisbury</option>
-        <option value="sheffield">Sheffield</option>
-        <option value="southampton">Southampton</option>
-        <option value="saint albans">St Albans</option>
-        <option value="stoke-on-trent">Stoke-on-Trent</option>
-        <option value="sunderland">Sunderland</option>
-        <option value="truro">Truro</option>
-        <option value="wakefield">Wakefield</option>
-        <option value="wells">Wells</option>
-        <option value="westminster">Westminster</option>
-        <option value="winchester">Winchester</option>
-        <option value="wolverhampton">Wolverhampton</option>
-        <option value="worcester">Worcester</option>
-        <option value="york">York</option>
-        <option value="bangor">Bangor</option>
-        <option value="cardiff">Cardiff</option>
-        <option value="newport">Newport</option>
-        <option value="saint davids">St Davids</option>
-        <option value="swansea">Swansea</option>
-        <option value="aberdeen">Aberdeen</option>
-        <option value="dundee">Dundee</option>
-        <option value="edinburgh">Edinburgh</option>
-        <option value="glasgow">Glasgow</option>
-        <option value="inverness">Inverness</option>
-        <option value="stirling">Stirling</option>
-        <option value="armagh">Armagh</option>
-        <option value="belfast">Belfast</option>
-        <option value="londonderry">Londonderry</option>
-        <option value="lisburn">Lisburn</option>
-        <option value="newry">Newry</option>
-      </select>
-      <button class="search-button" type="submit" aria-label="Search button">
-        <i class="fas fa-search"></i>
-      </button>
-    </article>
-    <article class="results">
-    </article>
-  </section>
-  <script src="public/js/script.js"></script>
+      <h1 class="headline">Weather</h1>
+      <p class="date"></p>
+      <article class="city-dropdown">
+        <label for = "city" class = "label-design">Select your city:</Label>
+        <select required id="city" class="dropdown">
+          <option value="london">London</option>
+          <option value="bath">Bath</option>
+          <option value="birmingham">Birmingham</option>
+          <option value="bradford">Bradford</option>
+          <option value="brighton">Brighton and Hove</option>
+          <option value="bristol">Bristol</option>
+          <option value="cambridge">Cambridge</option>
+          <option value="canterbury">Canterbury</option>
+          <option value="carlisle">Carlisle</option>
+          <option value="chester">Chester</option>
+          <option value="chichester">Chichester</option>
+          <option value="coventry">Coventry</option>
+          <option value="derby">Derby</option>
+          <option value="durham">Durham</option>
+          <option value="ely">Ely</option>
+          <option value="exeter">Exeter</option>
+          <option value="gloucester">Gloucester</option>
+          <option value="hereford">Hereford</option>
+          <option value="city of kingston upon hull">Kingston upon Hull</option>
+          <option value="lancaster">Lancaster</option>
+          <option value="leeds">Leeds</option>
+          <option value="leicester">Leicester</option>
+          <option value="lichfield">Lichfield</option>
+          <option value="lincoln">Lincoln</option>
+          <option value="liverpool">Liverpool</option>
+          <option value="manchester">Manchester</option>
+          <option value="newcastle upon tyne">Newcastle upon Tyne</option>
+          <option value="norwich">Norwich</option>
+          <option value="nottingham">Nottingham</option>
+          <option value="oxford">Oxford</option>
+          <option value="peterborough">Peterborough</option>
+          <option value="plymouth">Plymouth</option>
+          <option value="portsmouth">Portsmouth</option>
+          <option value="preston">Preston</option>
+          <option value="ripon">Ripon</option>
+          <option value="salford">Salford</option>
+          <option value="salisbury">Salisbury</option>
+          <option value="sheffield">Sheffield</option>
+          <option value="southampton">Southampton</option>
+          <option value="saint albans">St Albans</option>
+          <option value="stoke-on-trent">Stoke-on-Trent</option>
+          <option value="sunderland">Sunderland</option>
+          <option value="truro">Truro</option>
+          <option value="wakefield">Wakefield</option>
+          <option value="wells">Wells</option>
+          <option value="westminster">Westminster</option>
+          <option value="winchester">Winchester</option>
+          <option value="wolverhampton">Wolverhampton</option>
+          <option value="worcester">Worcester</option>
+          <option value="york">York</option>
+          <option value="bangor">Bangor</option>
+          <option value="cardiff">Cardiff</option>
+          <option value="newport">Newport</option>
+          <option value="saint davids">St Davids</option>
+          <option value="swansea">Swansea</option>
+          <option value="aberdeen">Aberdeen</option>
+          <option value="dundee">Dundee</option>
+          <option value="edinburgh">Edinburgh</option>
+          <option value="glasgow">Glasgow</option>
+          <option value="inverness">Inverness</option>
+          <option value="stirling">Stirling</option>
+          <option value="armagh">Armagh</option>
+          <option value="belfast">Belfast</option>
+          <option value="londonderry">Londonderry</option>
+          <option value="lisburn">Lisburn</option>
+          <option value="newry">Newry</option>
+        </select>
+        <button class="search-button" type="submit" aria-label="Search button">
+          <i class="fas fa-search"></i>
+        </button>
+      </article>
+      <article class="results"></article>
+    </section>
+    <script src="public/js/script.js"></script>
   </body>
 </html>

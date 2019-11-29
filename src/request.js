@@ -11,9 +11,9 @@ const myRequest = (url, cb) => {
       });
       response.on("end", () => {
         const body = JSON.parse(data);
-        // const statusCode = response.statusCode;
-        // cb(null, { statusCode, body });
-        cb(null, body);
+        const statusCode = response.statusCode;
+        cb(null, { statusCode, body });
+        // cb(null, body);
       });
     })
     .on("error", err => {

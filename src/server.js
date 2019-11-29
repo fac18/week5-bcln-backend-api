@@ -5,5 +5,7 @@ const PORT = process.env.PORT || 8888;
 const server = http.createServer(router);
 
 server.listen(PORT, () => {
-  console.log("The server is listening on 8888. Ready to accept requests");
+  PORT === 8888
+    ? console.log(`The server is listening on localhost: ${PORT}`)
+    : console.log(`server is running on heroku site `);
 });

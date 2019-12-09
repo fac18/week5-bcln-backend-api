@@ -5,7 +5,6 @@ const env = require("env2")(__dirname + "/.env");
 const myRequest = require("./request.js");
 
 const handleHome = (request, response) => {
-  console.log("handleHome - Is running");
   const filePath = path.join(__dirname, "..", "public", "index.html");
   fs.readFile(filePath, (error, file) => {
     if (error) {
@@ -22,8 +21,6 @@ const handleHome = (request, response) => {
 const handlePublic = (request, response) => {
   const endpoint = request.url;
   const extension = endpoint.split(".")[1];
-  console.log("ext: ", extension);
-  console.log("endpoint: ", endpoint);
   const extensionType = {
     html: "text/html",
     css: "text/css",
@@ -52,13 +49,8 @@ const handlePublic = (request, response) => {
 
 const handleData = (request, response, endpoint) => {
   const weatherKey = process.env.DB_APIKEYWEATHER;
-  console.log(endpoint);
-  // const cityCodeSpaceFix = endpoint.split("%20").join
   const cityCode = endpoint.split("=")[1];
   let url = `http://api.openweathermap.org/data/2.5/weather?q=${cityCode},uk&units=metric&APPID=${weatherKey}`;
-  console.log(url);
-  // request.myRequest(url)
-  // console.log(url)
   myRequest(url, (err, data) => {
     if (err) {
       console.log(err);
@@ -71,7 +63,6 @@ const handleData = (request, response, endpoint) => {
         weatherDesc: data.body.weather[0].description,
         weatherTemp: data.body.main.temp
       };
-      console.log(weatherInfo);
       response.write(JSON.stringify(weatherInfo));
       response.end();
     }

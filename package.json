@@ -20,12 +20,14 @@
   },
   "homepage": "https://github.com/fac18/week5-bcln-backend-api#readme",
   "devDependencies": {
-    "env2": "^2.2.2",
     "eslint": "^6.7.1",
     "nock": "^11.7.0",
     "nodemon": "^2.0.1",
     "supertest": "^4.0.2",
     "tap-spec": "^5.0.0",
     "tape": "^4.11.0"
+  },
+  "dependencies": {
+    "env2": "^2.2.2"
   }
 }
